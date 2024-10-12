@@ -30,9 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
           taskList.removeChild(li);
       };
 
-      // Append remove button to the li element
+      // Append the remove button to the li element
       li.appendChild(removeButton);
-      // Append li to taskList
+      // Append the li to taskList
       taskList.appendChild(li);
 
       // Clear the task input field
@@ -40,15 +40,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Step 4: Attach Event Listeners
-  // Add task when button is clicked
+  // Add an event listener to addButton that calls addTask when the button is clicked
   addButton.addEventListener('click', addTask);
 
-  // Add task when Enter key is pressed
+  // Add an event listener to taskInput for the 'keypress' event
   taskInput.addEventListener('keypress', (event) => {
+      // Check if event.key is equal to 'Enter' before calling addTask
       if (event.key === 'Enter') {
           addTask();
       }
   });
-
-  addTask();
 });
